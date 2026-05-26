@@ -28,7 +28,7 @@ while True:
     if tijdKlok == 60:
         uur += 1
         tijdKlok = 0
-    klok = font.render(tijdKlok)
+    klok = font.render(str(uur), True, (255,255,255))
 
 
     if toetsen[pygame.K_q]: # stop de pygame door q in te drukken of door het kruisje rechts boven aan te klikken in pygame
@@ -38,6 +38,7 @@ while True:
             break
     
     frame.fill((0,0,0))
+    frame.blit(klok, (0, 1020))
 
     pygame.display.flip()
     tijd += 1 # doe 1 bij variabele tijd
